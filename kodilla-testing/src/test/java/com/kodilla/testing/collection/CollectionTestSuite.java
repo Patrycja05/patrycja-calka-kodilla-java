@@ -54,6 +54,6 @@ public class CollectionTestSuite {
         System.out.println("List contains: " + result1);
 
         //Then
-        Assert.assertEquals(2, result1.size());
+        Assert.assertEquals(evenList, result1);
     }
 }
