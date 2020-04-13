@@ -23,8 +23,8 @@ public class ShapeCollectorTestSuite {
         //Given
         ShapeCollector collector = new ShapeCollector();
         Circle circle1 = new Circle("Circle", 23);
-        //When
         collector.addFigure(circle1);
+        //When
         collector.removeFigure(circle1);
         //Then
         Assert.assertEquals(0, collector.shapesQuantity());
@@ -35,8 +35,8 @@ public class ShapeCollectorTestSuite {
         //Given
         ShapeCollector collector = new ShapeCollector();
         Circle circle2 = new Circle("Circle", 23);
-        //When
         collector.addFigure(circle2);
+        //When
         collector.getFigure(1);
         //Then
         Assert.assertEquals(1, collector.shapesQuantity());
