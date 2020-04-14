@@ -27,7 +27,9 @@ public class StatisticsTestSuite {
         //When
         calculate.calculateAdvStatistics(statisticsMock);
         //Then
-        Assert.assertEquals(1, calculate.average1, 0);
+        Assert.assertEquals(1, calculate.averagePostsPerUser, 0);
+        Assert.assertEquals(2, calculate.averageCommentsPerUser, 0);
+        Assert.assertEquals(2, calculate.averageCommentsPerPost, 0);
     }
     @Test
     public void testCalculateAdvStatistics2(){
@@ -45,7 +47,9 @@ public class StatisticsTestSuite {
         //When
         calculate.calculateAdvStatistics(statisticsMock);
         //Then
-        Assert.assertEquals(0, calculate.average1, 0);
+        Assert.assertEquals(0, calculate.averagePostsPerUser, 0);
+        Assert.assertEquals(2, calculate.averageCommentsPerUser, 0);
+        Assert.assertEquals(0, calculate.averageCommentsPerPost, 0);
     }
 
     @Test
@@ -64,7 +68,9 @@ public class StatisticsTestSuite {
         //When
         calculate.calculateAdvStatistics(statisticsMock);
         //Then
-        Assert.assertEquals(0.74, calculate.average1, 0.01);
+        Assert.assertEquals(0.74, calculate.averagePostsPerUser, 0.01);
+        Assert.assertEquals(1.11, calculate.averageCommentsPerUser, 0.01);
+        Assert.assertEquals(1.49, calculate.averageCommentsPerPost, 0.01);
     }
 
     @Test
@@ -83,7 +89,9 @@ public class StatisticsTestSuite {
         //When
         calculate.calculateAdvStatistics(statisticsMock);
         //Then
-        Assert.assertEquals(0, calculate.average3, 0);
+        Assert.assertEquals(0.74, calculate.averagePostsPerUser, 0.01);
+        Assert.assertEquals(0, calculate.averageCommentsPerUser, 0);
+        Assert.assertEquals(0, calculate.averageCommentsPerPost, 0);
     }
 
     @Test
@@ -102,7 +110,9 @@ public class StatisticsTestSuite {
         //When
         calculate.calculateAdvStatistics(statisticsMock);
         //Then
-        Assert.assertEquals(0.16, calculate.average3, 0.01);
+        Assert.assertEquals(0.89, calculate.averagePostsPerUser, 0.01);
+        Assert.assertEquals(0.14, calculate.averageCommentsPerUser, 0.01);
+        Assert.assertEquals(0.16, calculate.averageCommentsPerPost, 0.01);
     }
 
     @Test
@@ -118,7 +128,9 @@ public class StatisticsTestSuite {
         //When
         calculate.calculateAdvStatistics(statisticsMock);
         //Then
-        Assert.assertEquals(0, calculate.average1, 0);
+        Assert.assertEquals(0, calculate.averagePostsPerUser, 0);
+        Assert.assertEquals(0, calculate.averageCommentsPerUser, 0);
+        Assert.assertEquals(0.16, calculate.averageCommentsPerPost, 0.01);
     }
 
     @Test
@@ -137,6 +149,8 @@ public class StatisticsTestSuite {
         //When
         calculate.calculateAdvStatistics(statisticsMock);
         //Then
-        Assert.assertEquals(0.8, calculate.average1, 0);
+        Assert.assertEquals(0.8, calculate.averagePostsPerUser, 0.01);
+        Assert.assertEquals(0.13, calculate.averageCommentsPerUser, 0.01);
+        Assert.assertEquals(0.16, calculate.averageCommentsPerPost, 0.01);
     }
 }

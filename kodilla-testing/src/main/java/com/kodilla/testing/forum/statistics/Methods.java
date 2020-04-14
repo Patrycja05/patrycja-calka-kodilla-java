@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Methods {
     Statistics statistics;
-    double average1;
-    double average2;
-    double average3;
+    double averagePostsPerUser;
+    double averageCommentsPerUser;
+    double averageCommentsPerPost;
 
     public Methods(Statistics statistics){
         this.statistics = statistics;
@@ -17,25 +17,25 @@ public class Methods {
         double numberOfUsers = statistics.usersNames().size();
         double numberOfComments = statistics.commentsCount();
         if(numberOfPosts == 0 || numberOfUsers == 0) {
-            average1 = 0;
+            averagePostsPerUser = 0;
         } else {
-            average1 = numberOfPosts / numberOfUsers;
+            averagePostsPerUser = numberOfPosts / numberOfUsers;
         }
         if(numberOfComments == 0 || numberOfUsers == 0) {
-            average2 = 0;
+            averageCommentsPerUser = 0;
         } else {
-            average2 = numberOfComments / numberOfUsers;;
+            averageCommentsPerUser = numberOfComments / numberOfUsers;;
         }
         if(numberOfPosts == 0 || numberOfComments == 0) {
-            average3 = 0;
+            averageCommentsPerPost = 0;
         } else {
-            average3 = numberOfComments / numberOfPosts;
+            averageCommentsPerPost = numberOfComments / numberOfPosts;
         }
     }
 
     public void showStatistics() {
-        System.out.println(average1);
-        System.out.println(average2);
-        System.out.println(average3);
+        System.out.println(averageCommentsPerUser);
+        System.out.println(averageCommentsPerUser);
+        System.out.println(averageCommentsPerPost);
     }
 }
