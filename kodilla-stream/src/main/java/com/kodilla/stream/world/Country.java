@@ -1,4 +1,16 @@
 package com.kodilla.stream.world;
 
-public class Country {
+import java.math.BigDecimal;
+
+public final class Country {
+    private final String country;
+
+    public Country(final String country) {
+        this.country = country;
+
+    }
+
+    public BigDecimal getPeopleQuantity(BigDecimal peopleQuantity) {
+        return peopleQuantity;
+    }
 }
