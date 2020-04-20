@@ -1,21 +1,21 @@
 package com.kodilla.stream.world;
 
-import com.kodilla.stream.sand.Africa;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.HashMap;
+public final class Continent {
+    private final String continent;
+    private final List<Country> countries = new ArrayList<>();
 
-public class Continent {
-    private final HashMap<World, Country> countriesPerContinent = new HashMap<>();
+    public Continent(final String continent) {
+        this.continent = continent;
+    }
 
-    public void addCountry() {
-        World asia = new World("Asia");
-        World europe = new World("Europe");
-        World africa = new World("Africa");
-        countriesPerContinent.put(asia, new Country("China"));
-        countriesPerContinent.put(asia, new Country("Japan"));
-        countriesPerContinent.put(europe, new Country("Poland"));
-        countriesPerContinent.put(europe, new Country("Albania"));
-        countriesPerContinent.put(africa, new Country("SA"));
-        countriesPerContinent.put(africa, new Country("Gambia"));
+    public void addCountry(Country country) {
+        countries.add(country);
+    }
+
+    public List<Country> getCountries() {
+        return countries;
     }
 }
