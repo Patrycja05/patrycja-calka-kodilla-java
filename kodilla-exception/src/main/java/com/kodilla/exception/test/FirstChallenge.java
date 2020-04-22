@@ -4,16 +4,8 @@ import java.lang.ArithmeticException;
 
 public class FirstChallenge {
     public double divide(double a, double b) throws ArithmeticException {
-        try {
-            if (b == 0) {
-                throw new ArithmeticException();
-            }
-
-        } catch (ArithmeticException e) {
-            System.out.println("Oh no! You can't divide by 0.");
-
-        } finally {
-            System.out.println("Exception test.");
+        if (b == 0) {
+            throw new ArithmeticException();
         }
         return a / b;
     }
@@ -25,6 +17,16 @@ public class FirstChallenge {
     public static void main(String[] args) {
 
         FirstChallenge firstChallenge = new FirstChallenge();
+
+        try {
+            firstChallenge.divide(1,0);
+
+        } catch (ArithmeticException e) {
+            System.out.println("Oh no! You can't divide by 0.");
+
+        } finally {
+            System.out.println("Exception test.");
+        }
 
         double result = firstChallenge.divide(3, 0);
 
