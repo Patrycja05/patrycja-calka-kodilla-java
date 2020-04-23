@@ -27,9 +27,7 @@ public class FirstChallenge {
         } finally {
             System.out.println("Exception test.");
         }
-
         double result = firstChallenge.divide(3, 0);
-
         System.out.println(result);
     }
 }
