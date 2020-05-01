@@ -9,9 +9,9 @@ public class FlightSearching {
         flights.put("Pyrzowice", true);
         flights.put("Heathrow", false);
 
-        if(flights.containsKey(flight.getArrivalAirport()) || flights.containsKey(flight.getDepartureAirport())){
+        if(flights.containsKey(flight.getArrivalAirport())){
             System.out.println(flight);
-            return true;
+            return flights.get(flight.getArrivalAirport());
         } else {
             throw new RouteNotFoundException();
         }
