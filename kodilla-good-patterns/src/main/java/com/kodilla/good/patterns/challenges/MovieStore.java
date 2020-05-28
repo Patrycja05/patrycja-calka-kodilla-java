@@ -27,17 +27,15 @@ public class MovieStore {
         booksTitlesWithTranslations.put("AV", avengersTranslations);
         booksTitlesWithTranslations.put("FL", flashTranslations);
 
-        String listOfTitles = booksTitlesWithTranslations.entrySet().stream()
-                .flatMap(list -> list.getValue().stream())
-                .collect(Collectors.joining(" ! "));
-
-        System.out.println(listOfTitles);
-
-
         return booksTitlesWithTranslations;
     }
 
     public static void main(String[] args) {
-        getMovies();
+
+        String listOfTitles = getMovies().entrySet().stream()
+                .flatMap(list -> list.getValue().stream())
+                .collect(Collectors.joining(" ! "));
+
+        System.out.println(listOfTitles);
     }
 }
