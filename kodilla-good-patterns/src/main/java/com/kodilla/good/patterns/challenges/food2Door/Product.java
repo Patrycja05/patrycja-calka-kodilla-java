@@ -9,14 +9,6 @@ public class Product {
         this.productName = productName;
     }
 
-    public int getProductQuantity() {
-        return productQuantity;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
     @Override
     public String toString() {
         return "productQuantity=" + productQuantity +
