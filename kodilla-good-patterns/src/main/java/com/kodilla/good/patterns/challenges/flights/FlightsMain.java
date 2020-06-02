@@ -4,6 +4,7 @@ public class FlightsMain {
     public static void main(String[] args) {
         FlightsService flightsService = new FlightsService();
 
-        flightsService.searchArrivalAirport();
+        //flightsService.searchArrivalAirport();
+        flightsService.searchDepartureAirport();
     }
 }
