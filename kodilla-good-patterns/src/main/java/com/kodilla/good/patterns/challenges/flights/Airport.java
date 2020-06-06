@@ -4,11 +4,17 @@ import java.util.Objects;
 
 public class Airport {
     private String arrivalAirport;
+    private String transferAirport;
     private String departureAirport;
 
-    public Airport(String arrivalAirport, String departureAirport) {
+    public Airport(String arrivalAirport, String transferAirport, String departureAirport) {
         this.arrivalAirport = arrivalAirport;
+        this.transferAirport = transferAirport;
         this.departureAirport = departureAirport;
+    }
+
+    public String getTransferAirport() {
+        return transferAirport;
     }
 
     public String getArrivalAirport() {
