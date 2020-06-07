@@ -38,4 +38,13 @@ public class Airport {
     public int hashCode() {
         return Objects.hash(arrivalAirport, departureAirport);
     }
+
+    @Override
+    public String toString() {
+        return "Airport{" +
+                "arrivalAirport='" + arrivalAirport + '\'' +
+                ", transferAirport='" + transferAirport + '\'' +
+                ", departureAirport='" + departureAirport + '\'' +
+                '}';
+    }
 }
