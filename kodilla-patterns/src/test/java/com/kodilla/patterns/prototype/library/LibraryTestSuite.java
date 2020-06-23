@@ -7,18 +7,35 @@ import java.time.LocalDate;
 
 public class LibraryTestSuite {
     @Test
-    public void testGetBooks(){
+    public void testGetBooks() {
         //Given
-        Library library = new Library("Rare books store");
-        Book book1 = new Book("The ninth gate", "Arturo Pérez-Reverte", LocalDate.of(1450, 05, 05));
-        Book book2 = new Book("The City in the Sea", "Edgar Allan Poe", LocalDate.of(1847, 10, 15));
-        Book book3 = new Book("The Big Four", "Agatha Christie", LocalDate.of(1966, 01, 10));
-        //When
-        library.books.add(book1);
-        library.books.add(book2);
-        library.books.add(book3);
+        Book books = new Book("Harry Potter", "J.K. Rowling", LocalDate.of(2001, 05, 28));
+
+        Library library = new Library("Library 1");
+        library.getBooks().add(books);
+
+        Library clonedLibrary = null;
+        try {
+            clonedLibrary = library.shallowCopy();
+            clonedLibrary.setName("Library 2");
+        } catch (CloneNotSupportedException e) {
+            System.out.println(e);
+        }
+
+        Library deepClonedLibrary = null;
+        try{
+            deepClonedLibrary = library.deepCopy();
+            deepClonedLibrary.setName("Library 3");
+        } catch (CloneNotSupportedException e) {
+            System.out.println(e);
+        }
+
         //Then
-        System.out.println(library.books);
-        Assert.assertEquals(3, library.books.size());
+        System.out.println(library);
+        System.out.println(clonedLibrary);
+        System.out.println(deepClonedLibrary);
+        Assert.assertNotNull(library);
+        Assert.assertEquals(1, clonedLibrary.getBooks().size());
+        Assert.assertEquals(1, deepClonedLibrary.getBooks().size());
     }
 }
