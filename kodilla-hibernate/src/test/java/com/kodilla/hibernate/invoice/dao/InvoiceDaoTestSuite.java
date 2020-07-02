@@ -63,7 +63,6 @@ public class InvoiceDaoTestSuite {
         Assert.assertNotNull(invoice.getId());
         Assert.assertNotEquals(0, invoice.getId());
 
-
         //CleanUp
         itemDao.delete(item1);
         itemDao.delete(item2);

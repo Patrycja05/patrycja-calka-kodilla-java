@@ -16,7 +16,6 @@ import java.util.List;
 public class CompanyDaoTestSuite {
     @Autowired
     CompanyDao companyDao;
-
     @Autowired
     EmployeeDao employeeDao;
 
@@ -89,16 +88,27 @@ public class CompanyDaoTestSuite {
         lindaKovalsky.getCompanies().add(dataMaesters);
         lindaKovalsky.getCompanies().add(greyMatter);
 
+        employeeDao.save(johnSmith);
+        employeeDao.save(stephanieClarckson);
+        employeeDao.save(lindaKovalsky);
+        companyDao.save(softwareMachine);
+        companyDao.save(greyMatter);
+        companyDao.save(dataMaesters);
+
         //When
         List<Employee> employeesByLastname = employeeDao.retrieveEmployeesByName("Kovalsky");
         List<Company> companiesByLetter = companyDao.retrieveCompanyByThreeLetters("GRE");
 
         //Then
-        Assert.assertEquals(3, employeesByLastname.size());
+        Assert.assertEquals(1, employeesByLastname.size());
         Assert.assertEquals(1, companiesByLetter.size());
 
         //CleanUP
-        employeeDao.deleteAll();
-        companyDao.deleteAll();
+        employeeDao.delete(johnSmith);
+        employeeDao.delete(stephanieClarckson);
+        employeeDao.delete(lindaKovalsky);
+        companyDao.delete(softwareMachine);
+        companyDao.delete(greyMatter);
+        companyDao.delete(dataMaesters);
     }
 }
