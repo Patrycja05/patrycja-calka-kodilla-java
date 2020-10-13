@@ -1,5 +1,8 @@
 package com.kodilla.patterns2.facade;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class Item {
     private final Long productId;
     private final double qty;
