@@ -20,6 +20,14 @@ public final class SimpleProduct {
     }
 
     @Override
+    public String toString() {
+        return "SimpleProduct{" +
+                "productName='" + productName + '\'' +
+                ", productPrice=" + productPrice +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof SimpleProduct)) return false;
